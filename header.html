@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Header</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+      html,
+      body {
+        font-family: "Outfit", Sans-Serif;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center [&_i]:text-2xl">
+    <header class="w-5/6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-1">
+        <button
+          class="text-2xl lg:hidden"
+          type="button"
+          onclick="sidebar.showModal()"
+        >
+          <i class="ti ti-menu-2"></i>
+        </button>
+        <img class="h-12 md:hidden" src="assets/logo_sm.png" alt="Logo" />
+        <img class="h-12 hidden md:block" src="assets/logo.png" alt="Logo" />
+
+        <ul class="hidden lg:flex items-center gap-4">
+          <li><a>Home</a></li>
+          <li><a>About Us</a></li>
+          <li><a>Projects</a></li>
+          <li><a>Career</a></li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-4">
+        <ul class="flex items-center gap-4 text-2xl">
+          <li class="hidden md:inline">
+            <button type="button">
+              <i class="ti ti-search"></i>
+            </button>
+          </li>
+          <li class="hidden md:inline">
+            <button type="button">
+              <i class="ti ti-users-group"></i>
+            </button>
+          </li>
+          <li>
+            <button class="relative" type="button">
+              <i class="text-2xl ti ti-download"></i>
+              <span
+                class="absolute -top-0.5 -right-1 text-[8px] text-white bg-blue-500 size-4 flex items-center justify-center rounded-full"
+              >
+                52%
+              </span>
+            </button>
+          </li>
+          <li>
+            <button class="relative" type="button">
+              <i class="text-2xl ti ti-bell"></i>
+              <span
+                class="absolute -top-0.5 -right-1 text-[8px] text-white bg-red-500 size-4 flex items-center justify-center rounded-full"
+              >
+                99+
+              </span>
+            </button>
+          </li>
+          <li class="hidden md:inline">
+            <button class="relative" type="button">
+              <i class="text-2xl ti ti-message"></i>
+              <span
+                class="absolute -top-0.5 -right-1 text-[8px] text-white bg-green-500 size-4 flex items-center justify-center rounded-full"
+              >
+                6
+              </span>
+            </button>
+          </li>
+          <button
+            class="hidden md:flex items-center justify-center px-4 py-2 rounded-full gap-2 bg-black text-white"
+            type="button"
+          >
+            <i class="ti ti-plus p-0.5 border border-white rounded-full"></i>
+            <span class="text-xl">Create</span>
+          </button>
+          <button class="rounded-full size-9 overflow-clip" type="button">
+            <img
+              src="assets/image.jpg"
+              alt="Image"
+            />
+          </button>
+        </ul>
+      </div>
+    </header>
+    <dialog
+      class="block opacity-0 -translate-x-full transition-opacity transition-transform ease-in-out duration-300 not-open:inert open:opacity-100 open:translate-x-0 w-56 min-h-dvh"
+      id="sidebar"
+    >
+      <aside class="p-4 space-y-4 flex flex-col gap-2">
+        <button class="w-full flex justify-end" onclick="sidebar.close()" aria-label="Close">
+          <i class="ti ti-x"></i>
+        </button>
+        <div class="space-y-4">
+          <div
+            class="flex items-center rounded bg-gray-200 px-2 py-1 md:hidden"
+          >
+            <label class="pr-1" for="search">
+              <i class="ti ti-search"></i>
+            </label>
+            <input
+              class="w-full"
+              type="search"
+              name="search"
+              id="search"
+              placeholder="Search..."
+            />
+          </div>
+          <ul
+            class="flex flex-col gap-4 [&_a]:flex [&_a]:items-center [&_a]:gap-1"
+          >
+            <li>
+              <a><i class="ti ti-home"></i> Home</a>
+            </li>
+            <li>
+              <a><i class="ti ti-users"></i> About Us</a>
+            </li>
+            <li>
+              <a><i class="ti ti-folder-open"></i> Projects</a>
+            </li>
+            <li>
+              <a><i class="ti ti-briefcase"></i> Career</a>
+            </li>
+          </ul>
+          <ul
+            class="md:hidden flex flex-col gap-4 [&_a]:flex [&_a]:items-center [&_a]:gap-1"
+          >
+            <hr />
+            <li>
+              <a><i class="ti ti-users-group"></i> Groups</a>
+            </li>
+            <li>
+              <button
+                class="flex items-center justify-center gap-2"
+                type="button"
+              >
+                <div class="relative">
+                  <i class="ti ti-message"></i>
+                  <span
+                    class="absolute -top-0.5 -right-1 text-[8px] text-white bg-green-500 size-4 flex items-center justify-center rounded-full"
+                  >
+                    6
+                  </span>
+                </div>
+                <span>Inbox</span>
+              </button>
+            </li>
+            <li class="flex justify-center">
+              <button
+                class="flex items-center justify-center py-3 rounded-md gap-2 bg-black text-white w-full"
+                type="button"
+              >
+                <i
+                  class="ti ti-plus p-0.5 border border-white rounded-full"
+                ></i>
+                <span class="text-xl">Create</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </dialog>
+    <main class="w-5/6">
+      <p class="text-justify">Lorem ipsum odor amet, consectetuer adipiscing elit. Senectus magnis tellus maecenas non sapien dis ante adipiscing class. Adipiscing nisi nisi ornare vulputate nulla velit. Varius nec taciti vivamus neque est ullamcorper. Vulputate montes lacinia viverra et vivamus vitae fringilla? Pretium duis erat auctor sit facilisis porttitor primis quisque. Sagittis fermentum pellentesque purus finibus lacus cras maximus? Bibendum nullam dolor cursus consectetur nostra dui. Nascetur ultrices arcu pretium diam consectetur aenean vitae feugiat senectus.
+
+Nibh hac luctus cubilia ultrices taciti ipsum? Per fermentum ornare interdum nunc placerat fusce commodo consectetur. Platea suscipit sollicitudin commodo imperdiet pharetra turpis interdum sociosqu senectus? Pulvinar vulputate nulla nunc vehicula suspendisse. Vulputate proin purus sollicitudin amet dis hac per. Etiam id lobortis hendrerit feugiat ac nibh lacus?
+
+Suscipit fames ante ac ipsum netus; etiam tellus duis. Viverra cubilia amet montes maecenas magnis massa habitant. Interdum finibus curabitur tempus euismod sed elit nascetur et. Euismod efficitur non ligula himenaeos pharetra class fames. Sit magnis efficitur aptent magnis aliquet interdum volutpat? Nullam tellus in tempus; suspendisse imperdiet efficitur consectetur quisque maximus. Sed tempor posuere blandit quis vulputate. Turpis phasellus nascetur facilisi vulputate bibendum integer.
+
+Nisl porttitor posuere nisl, nec sapien habitasse dapibus nullam sodales. Aliquet vel euismod sed torquent sapien ipsum interdum ultricies arcu. Dis maximus consectetur pretium nibh lobortis justo. Per tincidunt quam phasellus semper scelerisque maximus tincidunt dui. Pharetra efficitur justo ad pellentesque aliquet. Auctor praesent commodo mattis tempus morbi. Pulvinar mi condimentum interdum suscipit morbi eros. Ornare convallis congue lacinia morbi aptent laoreet nullam commodo.
+
+Sit phasellus egestas per nostra mollis erat fusce. Non malesuada netus ultrices erat interdum est lectus. Non curabitur mollis dui a luctus. Blandit quam curae facilisi phasellus ante. Cubilia fringilla nibh nunc dolor nunc porttitor sagittis nascetur quis. Enim sodales posuere dictumst efficitur; himenaeos blandit luctus. Gravida enim in commodo non consequat dictumst laoreet. Erat ac augue nulla hendrerit porta turpis donec amet duis. Class adipiscing vivamus accumsan curabitur magnis ex arcu ornare.
+
+Montes quis nunc nullam finibus lectus sed eu inceptos fusce. Potenti senectus parturient lobortis aenean ridiculus cubilia lectus dis. Magna porttitor mattis eget urna quam. Augue ligula nisl netus pharetra sit ex in imperdiet. Libero auctor per leo duis potenti justo. Per libero amet arcu est pulvinar. Sapien semper nam elementum congue et natoque. Conubia parturient facilisis tristique magnis vehicula finibus nam sed. Sem parturient hendrerit; placerat quisque in hendrerit ornare.
+
+Integer et sociosqu tempus sed leo bibendum dui. Non ad ultricies risus magnis ultrices sapien sagittis. Id sit primis interdum sed vitae morbi curae. Potenti semper erat potenti porttitor fusce. Consequat porta vitae malesuada nibh elit nostra; parturient pharetra rutrum. Senectus class congue efficitur vestibulum sed ante phasellus sit. Id in taciti at dignissim mollis congue magnis neque. Sapien nam enim sollicitudin; ante rhoncus quisque.
+
+Dignissim non phasellus natoque bibendum ridiculus nam. Montes congue laoreet est tristique class. Varius orci maecenas netus purus fusce. Nisi nunc senectus dui nascetur pharetra egestas. Non velit natoque netus; nascetur scelerisque sapien. Eros rhoncus suscipit accumsan sed lacinia erat curabitur.
+
+Tortor varius aliquet conubia lacinia bibendum et taciti. Sociosqu tellus ultricies a; luctus sed neque fermentum dictum mauris. Nostra ac nostra, risus placerat interdum cubilia. Ac inceptos viverra curae posuere ullamcorper consequat. Nisl maecenas vitae lacus nostra ornare cras. At faucibus neque curae eleifend vehicula, morbi natoque nec. Eu sollicitudin interdum hac etiam nec amet orci feugiat scelerisque. Aliquet integer torquent fusce consectetur vitae porttitor. Luctus quisque ligula laoreet vel tortor est velit.
+
+Tincidunt facilisi ut suscipit interdum varius congue dignissim. Elit nulla faucibus ad suscipit ad natoque elit dictum. Enim viverra risus mi bibendum eros ullamcorper ridiculus. Risus sem primis quisque ultrices ipsum. Lorem feugiat congue bibendum urna; faucibus vestibulum amet. Cursus tristique lobortis quis; litora tellus facilisis. Cras felis nec lectus vitae facilisi semper purus. Eu volutpat faucibus curae; class at mi eleifend.
+
+Magna dictum consectetur accumsan nec velit. Efficitur ex lobortis hac litora sem efficitur nec. Purus velit vehicula suscipit, potenti convallis phasellus. Risus nascetur magnis inceptos purus parturient varius. Mattis mi aliquam eu pharetra in. Sed nulla sem bibendum gravida nullam metus quisque conubia. Integer accumsan augue fames scelerisque; sit velit elementum netus non. Rutrum duis efficitur cras adipiscing libero.
+
+Rutrum blandit lacus nec nostra nullam habitant facilisis conubia. Dis tincidunt vel scelerisque, etiam tincidunt purus dictum iaculis. Aenean senectus ornare laoreet metus facilisi et viverra. Suspendisse class ac bibendum inceptos lobortis magnis. Enim nullam gravida nulla conubia; elementum lectus. Montes sapien potenti vehicula at viverra vehicula suspendisse. Velit adipiscing purus mus ultricies aptent.
+
+Suscipit habitant bibendum metus nostra nulla luctus sodales fusce! Cubilia netus a efficitur enim adipiscing ac ridiculus. Orci luctus imperdiet molestie blandit, praesent donec sagittis purus. Venenatis parturient condimentum sagittis fusce ac tincidunt nec. Egestas nullam vivamus a hac tempor sapien suscipit. Ut ipsum sapien habitasse vehicula neque consequat.
+
+Rutrum massa gravida sed pellentesque praesent curabitur. Class elementum dui pharetra augue mattis consequat molestie volutpat. Ex potenti mauris semper potenti cursus enim. Erat nam potenti hendrerit volutpat aptent. Lectus elit praesent natoque; duis ac magnis. Ornare parturient integer nec etiam nunc pulvinar ullamcorper litora. Imperdiet nibh at est congue nisi praesent fermentum. Malesuada conubia quam amet ultricies mauris luctus. Finibus magnis posuere non magna viverra potenti maecenas.
+
+Eros gravida augue congue hac at, in aliquet penatibus. Duis taciti faucibus laoreet; augue adipiscing maecenas. Ultrices fames scelerisque nascetur neque iaculis ac curabitur turpis in. At quam quisque tincidunt nullam, vehicula nam neque. Duis fusce ante nascetur urna posuere leo blandit purus adipiscing. Diam netus sit etiam adipiscing tempus ex turpis fermentum sagittis. Lacinia nunc ligula eleifend dolor interdum vestibulum porta. Etiam eu auctor aptent mi viverra fames. Nibh dictum tortor eleifend erat eu id fames.
+
+Viverra senectus magnis semper et, massa libero consequat. Tortor maecenas bibendum feugiat facilisis litora facilisi. Magnis metus posuere nascetur neque curae himenaeos iaculis molestie. Fusce vehicula vivamus erat feugiat vehicula fames pharetra orci. Tellus praesent duis tincidunt, sociosqu fermentum taciti neque pellentesque tellus. Gravida senectus ultrices dis fermentum maecenas consectetur aenean?
+
+Montes per vivamus nibh torquent efficitur fames. Eleifend urna vehicula dapibus praesent rutrum sem. Maecenas justo ornare pellentesque placerat vel himenaeos nibh cubilia. Aenean pharetra ante ex phasellus; orci phasellus felis. Fermentum pulvinar habitant aptent metus sociosqu sit curabitur nam. Condimentum vehicula accumsan; tristique penatibus natoque malesuada montes parturient nostra. Nam elementum lacinia ridiculus inceptos arcu sollicitudin. Semper torquent scelerisque quis accumsan varius dictum.
+
+Ornare dis dictumst commodo; justo donec donec. Viverra lorem quam eleifend, integer penatibus volutpat urna. Ut morbi mollis ligula tempor proin mi orci. Est nibh sagittis mi molestie dignissim platea. Nam consectetur lorem urna id porta volutpat volutpat facilisi lacinia. Iaculis sociosqu integer quam sodales orci massa lacinia ornare integer. Orci amet primis primis eget vivamus vulputate taciti faucibus hac. Litora tristique ante molestie conubia augue. Sed lectus molestie vivamus sapien in.
+
+Facilisi erat at nec euismod erat. Quam maecenas fusce cursus per augue eleifend tortor etiam suspendisse. Nisl tincidunt placerat laoreet hac vitae tincidunt dictumst; curae hendrerit. Commodo ante orci facilisis mattis lacinia; nec vivamus mauris. Quam praesent etiam aptent, fermentum gravida habitant. Dignissim accumsan vulputate ligula mollis pharetra neque. Euismod consectetur rutrum massa odio diam ligula tristique.
+
+Dis efficitur velit eleifend metus per primis nostra mollis. Potenti aliquam est nostra maecenas ex libero class senectus. Lobortis vivamus massa vivamus; enim venenatis dis metus rhoncus. Mi faucibus eros gravida nisi vivamus libero mus imperdiet blandit. Risus per risus tempus volutpat donec fermentum potenti. Nam tempor volutpat in sit erat cubilia.</p>
+    </main>
+    
+    <script type="text/javascript" charset="utf-8">
+      const dialog = document.getElementsByTagName("dialog")[0];
+      window.addEventListener("resize", () => {
+            if (window.innerWidth > 1024) { // Adjust breakpoint as needed
+                dialog.close();
+            }
+        });
+    </script>
+  </body>
+</html>
