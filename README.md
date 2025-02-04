@@ -22,21 +22,13 @@ This project is a **responsive header with a sidebar** built using **HTML, Tailw
 ## 🚀 How to Use
 
 1. Clone this repository:
-```git clone https://github.com/Shakil-Ahmmed-58464/header-practice.git```
-
-### Installation
-
-Installing oumi in your environment is straightforward:
-
 ```shell
 git clone https://github.com/Shakil-Ahmmed-58464/header-practice.git
 ```
 
+2. Open [https://shakil-ahmmed-58464.github.io/header-practice](https://shakil-ahmmed-58464.github.io/header-practice) in another window.
 
-3. Open [https://shakil-ahmmed-58464.github.io/header-practice](https://shakil-ahmmed-58464.github.io/header-practice) in another window.
-
-
-4. Resize the window to see the responsive behavior.
+3. Resize the window to see the responsive behavior.
 
 
 📄 License
