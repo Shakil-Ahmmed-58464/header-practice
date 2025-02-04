@@ -4,11 +4,11 @@ This project is a **responsive header with a sidebar** built using **HTML, Tailw
 
 ## 📌 Features
 
-✅ **Responsive Design:** Works seamlessly across all screen sizes.
-✅ **Mobile Sidebar:** A slide-in menu appears on smaller screens.
-✅ **Icons with Notifications:** Includes search, messages, notifications, and download progress indicators.
-✅ **Toggle Sidebar:** Sidebar opens and closes on button click.
-✅ **Custom Font:** Uses the Outfit font from Google Fonts.
+- ✅ **Responsive Design:** Works seamlessly across all screen sizes.
+- ✅ **Mobile Sidebar:** A slide-in menu appears on smaller screens.
+- ✅ **Icons with Notifications:** Includes search, messages, notifications, and download progress indicators.
+- ✅ **Toggle Sidebar:** Sidebar opens and closes on button click.
+- ✅ **Custom Font:** Uses the Outfit font from Google Fonts.
 
 ## 🛠️ Technologies Used
 
